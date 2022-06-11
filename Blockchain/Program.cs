@@ -6,7 +6,25 @@ namespace Blockchain
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Create a blockchain and add some transactions
+            BlockchainHighLevel BE = new BlockchainHighLevel();
+
+            BE.AddBlock("Arnold pays for trip to USA 20BTC");
+            BE.AddBlock("Bobby Green pays 10BTC for Spa Resort");
+
+            int itemNumber = 0;
+            foreach (var item in BE.Blockchain)
+            {
+
+                Console.WriteLine("---------------------------");
+                Console.WriteLine("Block Height: " + itemNumber);
+                Console.WriteLine("Block Hash: " + BitConverter.ToString(item.BlockHash));
+                Console.WriteLine("Previous Hash: " + BitConverter.ToString(item.PreviousBlockHash));
+                Console.WriteLine("Transaction Data: " + item.Data);
+                Console.WriteLine("---------------------------");
+                Console.WriteLine("");
+                itemNumber++;
+            }
         }
     }
 }
