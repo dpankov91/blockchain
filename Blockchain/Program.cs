@@ -11,6 +11,7 @@ namespace Blockchain
 
             BE.AddBlock("Arnold pays for trip to USA 20BTC");
             BE.AddBlock("Bobby Green pays 10BTC for Spa Resort");
+            BE.AddBlock("Diana pays 15BTC for Dog food");
 
             int itemNumber = 0;
             foreach (var item in BE.Blockchain)
